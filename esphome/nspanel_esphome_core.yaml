@@ -2117,7 +2117,7 @@ script:
           condition:
             - lambda: |-
                 return (compare_versions("${version}", version_tft->state.c_str()) and compare_versions("${version}", version_blueprint->state.c_str()));
-          timeout: 60s
+          timeout: 120s
       - lambda: |-
           if (!id(is_uploading_tft)) {
             ESP_LOGD("script.check_versions", "Versions:");

@@ -2116,11 +2116,11 @@ script:
       - wait_until:
           condition:
             - lambda: |-
-                ESP_LOGD("script.check_versions", "Will start");
                 return (compare_versions("${version}", version_tft->state.c_str()) and compare_versions("${version}", version_blueprint->state.c_str()));
           timeout: 120s
       - lambda: |-
           if (!id(is_uploading_tft)) {
+            ESP_LOGD("script.check_versions", "Will start");
             ESP_LOGD("script.check_versions", "Versions:");
             ESP_LOGD("script.check_versions", "  TFT:       %s", version_tft->state.c_str());
             ESP_LOGD("script.check_versions", "  ESPHome:   ${version}");

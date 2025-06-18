@@ -2111,7 +2111,7 @@ script:
           }
 
   - id: check_versions
-    mode: restart
+    # mode: restart
     then:
       - wait_until:
           condition:
